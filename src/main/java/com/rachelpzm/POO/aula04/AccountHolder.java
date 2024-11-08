@@ -1,4 +1,4 @@
-package POO.aula04;
+package com.rachelpzm.POO.aula04;
 
 public class AccountHolder extends Person {
     private String agency;

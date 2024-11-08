@@ -1,4 +1,4 @@
-package javaBasico.aula15;
+package com.rachelpzm.javaBasico.aula15;
 
 public class Metodos {
     static void sum(int a, int b){

@@ -1,4 +1,4 @@
-package POO.aula02.revisao;
+package com.rachelpzm.POO.aula02.revisao;
 
 import java.util.ArrayList;
 import java.util.Arrays;

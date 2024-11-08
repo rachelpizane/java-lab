@@ -1,6 +1,6 @@
-package javaBasico.pacote01;
+package com.rachelpzm.javaBasico.pacote01;
 
-import javaBasico.pacote02.Pessoa;
+import com.rachelpzm.javaBasico.pacote02.Pessoa;
 
 public class Main {
     public static void main(String[] args) {

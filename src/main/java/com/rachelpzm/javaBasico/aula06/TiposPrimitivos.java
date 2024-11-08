@@ -1,4 +1,4 @@
-package javaBasico.aula06;
+package com.rachelpzm.javaBasico.aula06;
 
 import java.util.Scanner;
 

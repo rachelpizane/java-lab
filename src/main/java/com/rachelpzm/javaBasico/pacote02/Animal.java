@@ -1,4 +1,4 @@
-package javaBasico.pacote02;
+package com.rachelpzm.javaBasico.pacote02;
 
 public class Animal {
     public static void main(String[] args) {

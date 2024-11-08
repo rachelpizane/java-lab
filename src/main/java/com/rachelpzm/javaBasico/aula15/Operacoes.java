@@ -1,4 +1,4 @@
-package javaBasico.aula15;
+package com.rachelpzm.javaBasico.aula15;
 
 public class Operacoes {
     static void multi(int a, int b){

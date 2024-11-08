@@ -1,4 +1,4 @@
-package javaBasico.aula07;
+package com.rachelpzm.javaBasico.aula07;
 
 public class OperadoresAritmeticos {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package javaBasico.primeiroprograma;
+package com.rachelpzm.javaBasico.primeiroprograma;
 
 import java.util.Scanner;
 

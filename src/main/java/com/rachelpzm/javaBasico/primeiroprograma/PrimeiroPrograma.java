@@ -1,4 +1,4 @@
-package javaBasico.primeiroprograma;
+package com.rachelpzm.javaBasico.primeiroprograma;
 
 public class PrimeiroPrograma {
     public static void main (String[] args){

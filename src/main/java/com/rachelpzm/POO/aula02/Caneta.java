@@ -1,4 +1,4 @@
-package POO.aula02;
+package com.rachelpzm.POO.aula02;
 
 public class Caneta {
     private String modelo;

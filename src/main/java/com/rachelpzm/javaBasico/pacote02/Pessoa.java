@@ -1,4 +1,4 @@
-package javaBasico.pacote02;
+package com.rachelpzm.javaBasico.pacote02;
 
 public class Pessoa {
     protected String nome;

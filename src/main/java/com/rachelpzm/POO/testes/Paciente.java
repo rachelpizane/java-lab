@@ -1,4 +1,4 @@
-package POO.testes;
+package com.rachelpzm.POO.testes;
 
 public class Paciente extends Pessoa{
     private String doenca;

@@ -1,4 +1,4 @@
-package POO.testes;
+package com.rachelpzm.POO.testes;
 
 public abstract class Pessoa {
     private String name;

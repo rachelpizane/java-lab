@@ -1,6 +1,5 @@
-package POO.aula04;
+package com.rachelpzm.POO.aula04;
 
-import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -44,12 +43,8 @@ public class Main {
 
         List<AccountHolder> accountHolders = Arrays.asList(carlos, ana, amanda);
 
-        for(int i = 0; i < accountHolders.size(); i++){
-            AccountHolder holder = (AccountHolder) accountHolders.get(i);
-
-            if(holder.getCurrentBalance() > 2000){
-                System.out.println(holder.getName());
-            }
-        }
+        accountHolders.stream()
+                .filter(holder -> holder.getCurrentBalance() > 2000)
+                .forEach(holder -> holder.status());
     }
 }

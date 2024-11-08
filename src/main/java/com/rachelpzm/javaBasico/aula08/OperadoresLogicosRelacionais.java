@@ -1,4 +1,4 @@
-package javaBasico.aula08;
+package com.rachelpzm.javaBasico.aula08;
 
 public class OperadoresLogicosRelacionais {
     public static void main(String[] args) {

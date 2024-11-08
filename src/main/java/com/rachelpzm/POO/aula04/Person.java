@@ -1,4 +1,4 @@
-package POO.aula04;
+package com.rachelpzm.POO.aula04;
 
 public abstract class Person {
     private String name;
