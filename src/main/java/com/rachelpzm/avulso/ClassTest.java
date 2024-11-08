@@ -47,4 +47,24 @@ public class ClassTest {
         }
     }
 
+    public boolean isExpectedOS(String osName){
+        return "Linux".equals(osName);
+    }
+
+    public int soma(int a, int b){
+        return a + b;
+    }
+
+    public double dividir(int a, int b){
+        return (double) a / b;
+    }
+
+    public double resto(int a, int b){
+        return (double) a % b;
+    }
+
+    public String retornaVazio2(){
+        return null;
+    }
+
 }

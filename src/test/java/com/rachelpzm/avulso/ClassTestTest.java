@@ -1,6 +1,7 @@
 package com.rachelpzm.avulso;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assumptions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -8,10 +9,12 @@ import org.junit.jupiter.api.Test;
 class ClassTestTest {
 
     ClassTest teste;
+    String osName;
 
     @BeforeEach
     void setUp() {
         teste = new ClassTest();
+        osName = "Linux";
     }
 
     @Test
@@ -66,6 +69,42 @@ class ClassTestTest {
                 () -> teste.setName(null),
                 "O nome não pode ser nulo."
         );
+    }
+
+    @Test
+    void test7(){
+        // isExpectedOS(String osName) - > return "Linux".equals(osName);
+
+        assumeTrue(teste.isExpectedOS(osName)); // true osName == "Linux
+        // assumeTrue(teste.isExpectedOS("Windows")); // False
+
+        assertEquals(12, teste.soma(10,2), "10 + 2 = 12"); // Só será realizada se assumeTrue for true
+    }
+
+    @Test
+    void test8(){
+        // isExpectedOS(String osName) - > return "Linux".equals(osName);
+
+        // assumeFalse(teste.isExpectedOS(osName)); // true osName == "Linux
+        assumeFalse(teste.isExpectedOS("Windows")); // False
+
+        assertEquals(5.0,teste.dividir(10,2), "10 / 2 = 5.0"); // Só será realizada se assumeFalse for false
+    }
+
+    @Test
+    void test9(){
+        // isExpectedOS(String osName) - > return "Linux".equals(osName);
+
+        //assumingThat(teste.isExpectedOS("Windows"), () -> {
+         assumingThat(teste.isExpectedOS(osName), () -> { // osName == "Linux
+             assertEquals(1,teste.resto(5,2),"5 % 2 = 1.0");
+         });
+
+         // public String retornaVazio2() return null;
+
+        // ()-> assertNotNull(teste.retornaVazio2()) // Falhou
+        assertNull(teste.retornaVazio2());
+
     }
 
 }
