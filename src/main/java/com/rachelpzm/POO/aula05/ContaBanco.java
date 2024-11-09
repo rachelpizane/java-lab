@@ -4,74 +4,48 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ContaBanco {
-    TipoConta contaPoupanca; // Em construção (??)
+    List<TipoConta> contasDisponiveis = Arrays.asList(
+            new TipoConta(1,"conta-poupança",150,20),
+            new TipoConta(2,"conta-corrente",50,12)
+            );
 
     public String numConta;
-    protected String tipo;
+    protected TipoConta tipoConta;
     private String dono;
     private double saldo;
     private boolean status;
 
-    private boolean checarTipo(String tipo){
-        if(tipo.equals("cp") && tipo.equals("cc")){
-            throw new IllegalArgumentException("O tipo deve ser cp ou cc");
-        }
-
-        return true;
-    }
-
-    public ContaBanco(String numConta, String tipo, String dono) {
+    public ContaBanco(String numConta, int tipoContaID, String dono) {
         this.status = false;
         this.numConta = numConta;
         this.dono = dono;
         this.saldo = 0;
-        setTipo(tipo.toLowerCase());
+
+        definirTipoConta(tipoContaID);
     }
 
     public String getNumConta() {
         return numConta;
     }
 
-    public void setNumConta(String numConta) {
-        this.numConta = numConta;
-    }
-
-    public String getTipo() {
-        return tipo;
-    }
-
-    public void setTipo(String tipo) {
-        if(checarTipo(tipo)){
-            this.tipo = tipo;
-        }
+    public TipoConta getTipoConta() {
+        return tipoConta;
     }
 
     public String getDono() {
         return dono;
     }
 
-    public void setDono(String dono) {
-        this.dono = dono;
-    }
-
     public double getSaldo() {
         return saldo;
-    }
-
-    public void setSaldo(double saldo) {
-        this.saldo = saldo;
     }
 
     public boolean isStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
-    }
-
     public void abrirConta(){
-        double saldoInicial = tipo.equals("cp") ? 150 : 50;
+        double saldoInicial = tipoConta.getSaldoInicial();
 
         if(status){
             System.out.println("Conta já está aberta.\n");
@@ -137,7 +111,7 @@ public class ContaBanco {
     public void pagarMensal(){
         if (!validarStatus()) return;
 
-        double mensalidade = tipo.equals("cp") ? 20 : 12;
+        double mensalidade = tipoConta.getMensalidade();
 
         if(mensalidade > this.saldo){
             System.out.println("Você não tem saldo o suficiente.\n");
@@ -154,6 +128,18 @@ public class ContaBanco {
         System.out.printf("Saldo atual: R$ %.2f%n%n", this.saldo);
     }
 
+    public void status(){
+        String statusString = status ? "Aberta" : "Fechada";
+
+        String mensagem = String.format(
+                "Nome: %s%n" + "Tipo de Conta: %s%n" + "Status: %s%n" + "Saldo: R$ %.2f.%n",
+                dono, tipoConta.getNome(), statusString, saldo
+        );
+
+        System.out.println(mensagem);
+    }
+
+
     private boolean validarStatus(){
         if(!status){
             System.out.println("Ação bloqueada.A conta está fechada.\n");
@@ -165,5 +151,24 @@ public class ContaBanco {
 
     private boolean isPositive(double num){
         return num >= 0;
+    }
+
+    private void definirTipoConta(int tipoContaID){
+        boolean ehTipoValido = false;
+
+        for(int i = 0; i < contasDisponiveis.size(); i++){
+            TipoConta tipoConta = contasDisponiveis.get(i);
+            if(tipoConta.getId() == tipoContaID){
+                this.tipoConta = tipoConta;
+                ehTipoValido = true;
+
+                break;
+            }
+        }
+
+        if(!ehTipoValido){
+            throw new IllegalArgumentException("tipoContaID inválido.");
+        }
+
     }
 }
