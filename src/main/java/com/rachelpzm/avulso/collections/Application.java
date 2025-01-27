@@ -9,10 +9,10 @@ import java.util.List;
 public class Application {
     public static void main(String[] args) {
         System.out.print("Oi");
-        Collection colecao;
-        List lista1 = new ArrayList<>();
-        ArrayList lista;
-        LinkedList lista2;
-        Comparator c;
+        Collection<String> colecao;
+        List<String> lista1 = new ArrayList<>();
+        ArrayList<String> lista;
+        LinkedList<String> lista2;
+        Comparator<String> c;
     }
 }

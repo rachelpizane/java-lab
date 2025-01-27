@@ -1,8 +1,5 @@
 package com.rachelpzm.POO.aula03;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class Main {
     public static void main(String[] args) {
         Perfil perfilAna= new Perfil("Ana", 23);
