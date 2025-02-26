@@ -4,6 +4,7 @@ public class ContaCorrente {
     private int numero;
     private String titular;
     private double saldo;
+    private static String agencia = "novo-banco";
 
     public ContaCorrente(int numero, String titular, double saldo){
         this.numero = numero;
@@ -24,6 +25,10 @@ public class ContaCorrente {
     }
 
     public String obterSaldo() {
-        return numero + " - " + titular + " - " + saldo;
+        return numero + " - " + titular + " - " + saldo + " - " + agencia;
+    }
+
+    public static void setAgencia(String agencia){
+        agencia = agencia;
     }
 }

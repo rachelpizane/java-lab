@@ -1,6 +1,7 @@
 package com.rachelpzm.infnet.classes.application;
 
 import com.rachelpzm.infnet.classes.domain.ContaCorrente;
+import com.rachelpzm.infnet.classes.domain.Validacoes;
 
 import java.util.Scanner;
 
@@ -47,9 +48,11 @@ public class Application {
 
     private static double solicitarValor(String complemento){
         System.out.printf("Digite o valor do %s: ", complemento);
+
         String sValor = input.nextLine();
 
         return Double.parseDouble(sValor);
+
     }
 
 
