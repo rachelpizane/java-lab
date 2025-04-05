@@ -1,4 +1,4 @@
-package com.rachelpzm.formageometrica;
+package com.rachelpzm.infnet.formageometrica;
 
 public class Triangulo extends FormaGeometrica{
     private double[] lados = new double[3];

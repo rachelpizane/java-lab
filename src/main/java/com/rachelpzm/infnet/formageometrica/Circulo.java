@@ -1,10 +1,10 @@
-package com.rachelpzm.formageometrica;
+package com.rachelpzm.infnet.formageometrica;
 
 public class Circulo extends FormaGeometrica{
 
     private double raio;
 
-    public Circulo(double rario) {
+    public Circulo(double raio) {
         super("Círculo");
         this.raio = raio;
     }

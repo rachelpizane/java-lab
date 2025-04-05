@@ -1,4 +1,4 @@
-package com.rachelpzm.formageometrica;
+package com.rachelpzm.infnet.formageometrica;
 
 import java.util.Arrays;
 
@@ -12,7 +12,8 @@ public class Main {
                 new Triangulo(new double[]{12, 34, 45})
         };
 
-        // Arrays.sort(formasGeometricas); Proxima aula.
+        //Arrays.sort(formasGeometricas, new AreaFormaComparator());
+        Arrays.sort(formasGeometricas, new PerimetroFormaComparator());
 
         for(FormaGeometrica forma : formasGeometricas) {
             System.out.println(forma.toString() + ": Àrea: " + forma.getArea() + " Perimetro: " + forma.getPerimetro());

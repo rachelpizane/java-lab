@@ -15,9 +15,11 @@ public class ContaCorrente {
         return saldo;
     }
 
-    public void depositar(double valor) {
+    public void depositar(double valor) throws ValorNegativoException {
         if(valor > 0 ) {
             this.saldo += valor;
+        } else {
+            throw new ValorNegativoException("Deposito Inválido", valor);
         }
     }
 
